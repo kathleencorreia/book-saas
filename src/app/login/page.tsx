@@ -12,11 +12,11 @@ const login = async () => {
   }
 
   return (
-    <div className="w-full h-[100vh] flex flex-col items-center justify-center">
+    <div className="w-full h-screen flex flex-col items-center justify-center">
       <Image src="/Logo.svg" width={140} height={40} alt="Logo"></Image>
-      <div className="lg:w-1/4 flex flex-col gap-2 border-[1px] border-[#e6e6e6] px-12 py-8 rounded-2xl">
+      <div className="lg:w-1/4 flex flex-col gap-2 md:border border-[#e6e6e6] px-12 py-8 rounded-2xl">
         <h3 className="text-2xl font-semibold">Boas vindas</h3>
-        <p className="text-[#6B7280] text-[14px]">
+        <p className="text-[#6B7280] text-[14px] ">
           Faça seu login com email e senha
         </p>
         <FormLogin />

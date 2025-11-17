@@ -36,7 +36,7 @@ const FormLogin = () => {
             name="email"
             id=""
             placeholder="eu@exemplo.com.br"
-            className="border-[1px] border-[#ccc] p-2 text-sm rounded-md"
+            className="border border-[#ccc] p-2 text-sm rounded-md"
           />
         </div>{" "}
         <div className="flex flex-col mt-5 gap-2">
@@ -48,18 +48,18 @@ const FormLogin = () => {
             name="password"
             id="passaword"
             placeholder="*******"
-            className="border-[1px] border-[#ccc] p-2 text-sm rounded-md"
+            className="border border-[#ccc] p-2 text-sm rounded-md"
           />
         </div>
         <Button
           disabled={isPending}
-          className="bg-black text-[#fff] hover:bg-[#1f1f1f] mt-4"
+          className="bg-black text-white hover:bg-[#1f1f1f] mt-4"
         >
           Login
         </Button>
       </Form>
 
-      <p className="text-center my-4 text-[12px]">Ou faça login com </p>
+      <p className="text-center my-4 text-[12px] text-[#6B7280]">Ou faça login com </p>
       <button
         onClick={() => signIn("google")}
         className="w-full flex justify-center items-center gap-4 bg-gray-300 p-2 rounded-md cursor-pointer mb-5 text-sm"

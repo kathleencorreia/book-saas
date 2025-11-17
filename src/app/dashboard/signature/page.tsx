@@ -46,7 +46,7 @@ const page = () => {
           Você não possui nenhuma assinatura ativa. Que tal assinar agora?
         </span>
       </p>
-      <div className="flex mt-10">
+      <div className="flex mt-10 gap-6">
         {" "}
         {plans.map((plan, index) => (
           <Card

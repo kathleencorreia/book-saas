@@ -3,9 +3,9 @@ import React from "react";
 
 const Functionality = () => {
   return (
-    <section id="functionality" className="px-24 scroll-mt-20">
-      <h1 className="text-[#000] font-bold text-6xl text-center">Como funciona?</h1>
-      <div className="flex justify-center gap-20 mt-12">
+    <section id="functionality" className="px-8 md:px-24 scroll-mt-20">
+      <h1 className="text-black font-bold text-4xl md:text-6xl text-center">Como funciona?</h1>
+      <div className="flex flex-col md:flex-row justify-center gap-20 mt-12">
         <Image
           src="./functionality.svg"
           width={392}
@@ -13,7 +13,7 @@ const Functionality = () => {
           alt="woman boxes"
         />
         <div className=" flex flex-col justify-center gap-8">
-          <p className="flex gap-4 text-2xl text-[#6B7280] justify-between items-center">
+          <p className="flex gap-4 text-xl md:text-2xl text-[#6B7280] justify-between items-center">
             Acesso a 1 ebook por mês 
             <span>
               <svg
@@ -30,7 +30,7 @@ const Functionality = () => {
               </svg>
             </span>
           </p>{" "}
-          <p className="flex gap-4 text-2xl  text-[#6B7280] justify-between items-center">
+          <p className="flex gap-4 text-xl md:text-2xl text-[#6B7280] justify-between items-center">
             Curadoria especial
             <span>
               <svg
@@ -47,7 +47,7 @@ const Functionality = () => {
               </svg>
             </span>
           </p>{" "}
-          <p className="flex gap-4 text-2xl  text-[#6B7280] justify-between items-center">
+          <p className="flex gap-4 text-xl md:text-2xl text-[#6B7280] justify-between items-center">
             Cancele quando quiser{" "}
             <span>
               <svg

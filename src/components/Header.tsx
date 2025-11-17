@@ -13,11 +13,14 @@ const Header = ({
   const isLoggedIn = !!session?.user;
 
   return (
-    <header className="w-full px-60 py-6 flex ">
-      <nav className="w-full flex justify-between items-center ">
-        <div>
-          <Image src="/Logo.svg" width={130} height={40} alt="Logo"></Image>
-        </div>
+    <header
+      className="w-full px-8 md:px-60 py-6 flex items-center 
+   justify-between "
+    >
+      <div>
+        <Image src="/Logo.svg" width={130} height={40} alt="Logo"></Image>
+      </div>
+      <nav className=" flex justify-between items-center ">
         <div className="hidden md:flex items-center gap-7">
           <ul className="flex gap-7">
             <Link href={"#functionality"}>
@@ -31,7 +34,7 @@ const Header = ({
           {isLoggedIn ? (
             <Link href={"/dashboard"}>
               <Button
-                className="bg-white text-[#000] border-[#ccc] transition duration-300 hover:scale-105 hover:border-black"
+                className="bg-white text-black border-[#ccc] transition duration-300 hover:scale-105 hover:border-black"
                 type="button"
               >
                 Dashboard
@@ -40,7 +43,7 @@ const Header = ({
           ) : (
             <Link href={"/login"}>
               <Button
-                className="bg-white text-[#000] border-[#ccc] transition duration-300 hover:scale-105 hover:border-black"
+                className="bg-white text-black border-[#ccc] transition duration-300 hover:scale-105 hover:border-black"
                 type="button"
               >
                 Login
@@ -48,30 +51,49 @@ const Header = ({
             </Link>
           )}
         </div>
-        <div onClick={() => setOpen(!open)} className="md:hidden lg:hidden">
-          {open ? (
-            <Image
-              src="/closeIcon.svg"
-              width={24}
-              height={12}
-              alt="Icon close menu"
-            />
-          ) : (
-            <Image src="/menu.svg" width={24} height={12} alt="Icon menu" />
-          )}
+        <div className="flex w-full  md:hidden lg:hidden ">
+          <button onClick={() => setOpen(!open)}>
+            {open ? (
+              <Image
+                src="/closeIcon.svg"
+                width={24}
+                height={12}
+                alt="Icon close menu"
+              />
+            ) : (
+              <Image src="/menu.svg" width={24} height={12} alt="Icon menu" />
+            )}
+          </button>
 
           {open && (
-            <div className=" flex flex-col gap-7 fixed top-[90px] left-12">
-              <ul className="flex flex-col gap-7">
-                <li>Funcionamento</li>
-                <li>Preço</li>
+            <div className=" flex items-center w-full h-full bg-white flex-col gap-7 absolute top-[90px] left-0">
+              <ul className="flex items-center flex-col gap-7">
+                <Link href={"#functionality"} onClick={() => setOpen(false)}>
+                  <li>Funcionamento</li>
+                </Link>
+                <Link href={"#price"} onClick={() => setOpen(false)}>
+                  <li>Preço</li>
+                </Link>
               </ul>{" "}
-              <Button
-                className="bg-white text-[#000] border-[#ccc] transition duration-200 hover:scale-105"
-                type="button"
-              >
-                Login
-              </Button>
+              {isLoggedIn ? (
+                <Link href={"/dashboard"}>
+                  <Button
+                    className="bg-white text-black border-[#ccc] transition duration-300 hover:scale-105 hover:border-black"
+                    type="button"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : (
+                <Link href={"/login"}>
+                  <Button
+                    className="bg-white text-black border-[#ccc] transition duration-300 hover:scale-105 hover:border-black"
+                    type="button"
+                  >
+                    Login
+                  </Button>
+                </Link>
+              )}
             </div>
           )}
         </div>

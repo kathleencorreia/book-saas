@@ -1,20 +1,18 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Como começar
 
-First, run the development server:
+Instalar dependências
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+# ou
+yarn
+# ou
+pnpm install
+# ou
+bun install
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -35,14 +33,119 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+## Versão do Node
 
-## Banco de dados 
-Plataforma render - https://render.com/
-Prisma 
+Use a versão 20.x do Node.js
 
+```bash
+(verifique com node -v)
+```
 
-## autentication
-Auth
+## Banco de dados
 
-## cripitografia password
-bcrypt-ts
+O projeto utiliza o PostgreSQL como banco de dados, hospedado na plataforma Render, e o Prisma ORM para gerenciar o acesso aos dados.
+
+Adicione essa URL no seu arquivo .env.local: DATABASE_URL
+
+# Prisma ORM
+
+O Prisma já está configurado neste projeto.
+Você só precisa garantir que o cliente está instalado e que as migrações estão atualizadas.
+
+- Instalar dependências
+
+```bash
+npm install @prisma/client
+```
+
+(O pacote prisma já é usado para desenvolvimento, e o @prisma/client é necessário em produção.)
+
+- Atualizar o banco
+
+Para aplicar as migrações existentes no banco:
+
+```bash
+npx prisma migrate deploy
+```
+
+- Visualizar os dados
+
+Para abrir o painel do Prisma e visualizar o banco:
+
+```bash
+npx prisma studio
+```
+
+Isso abrirá uma interface no navegador em http://localhost:5555
+
+## Autenticação
+
+Este projeto utiliza NextAuth.js para autenticação de usuários, com suporte a login via Google.
+
+🔧 Instalação
+
+Instale o NextAuth com o seguinte comando:
+
+```bash
+npm install next-auth
+```
+ou
+```bash
+yarn add next-auth
+```
+
+Em seguida gerar a chave secret rode o comando:
+
+```bash
+npx auth secret
+```
+
+## Criptografia de Senhas
+
+O projeto utiliza o pacote bcrypt-ts
+para criptografia de senhas.
+
+Instalação:
+
+```bash
+npm install bcrypt-ts
+```
+
+# =========================================
+
+# VARIÁVEIS DE AMBIENTE - EXEMPLO
+
+# =========================================
+
+# Conexão com o banco de dados (PostgreSQL)
+
+# Formato: postgresql://usuario:senha@host:porta/nome_do_banco?schema=public
+
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DBNAME?schema=public"
+
+# Chave secreta usada pelo NextAuth para criptografar tokens/sessões
+
+# Gere uma chave segura com: npx auth secret
+
+AUTH_SECRET="your_secret_key_here"
+
+# Credenciais do login com Google (OAuth)
+
+# Crie no Google Cloud Console > APIs & Services > Credentials
+
+AUTH_GOOGLE_ID="your_google_client_id_here"
+AUTH_GOOGLE_SECRET="your_google_client_secret_here"
+
+## Executar o servidor de desenvolvimento
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) no seu navegador e veja o resultado.

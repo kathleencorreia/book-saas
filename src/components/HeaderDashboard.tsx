@@ -2,10 +2,11 @@ import logoutAction from "@/app/(logout)/logoutAction";
 import Form from "next/form";
 import Image from "next/image";
 import Link from "next/link";
+import MenuMobileDashboard from "./menuMobileDashboard";
 
 export default function HeaderDashboard({ userName }: { userName: string }) {
   return (
-    <header className="w-full px-52 py-6 flex items-center justify-center">
+    <header className="w-full px-8 md:px-52 py-6 flex items-center justify-center">
       <nav className="w-full flex justify-between items-center ">
         <Link href={"/"}>
           <div>
@@ -28,7 +29,7 @@ export default function HeaderDashboard({ userName }: { userName: string }) {
               <Image src="/user.svg" width={24} height={24} alt="Usuário" />
             </summary>
 
-            <div className="absolute right-0 mt-2 bg-white shadow-lg p-2 left-[-20px] min-w-[160px] z-50">
+            <div className="absolute right-0 mt-2 bg-white shadow-lg p-2 -left-5 min-w-40 z-50">
               <span className="px-3 py-1 text-sm cursor-pointer">
                 {userName}
               </span>
@@ -43,6 +44,7 @@ export default function HeaderDashboard({ userName }: { userName: string }) {
             </div>
           </details>
         </div>
+        <MenuMobileDashboard userName={userName}/>
       </nav>
     </header>
   );
