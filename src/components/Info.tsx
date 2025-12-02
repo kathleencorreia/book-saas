@@ -2,6 +2,8 @@ import React from "react";
 import PaymentButton from "./PaymentButton";
 import { auth } from "../../auth";
 import fetchSubscriptionByEmail from "../../lib/stripe";
+import Link from "next/link";
+import Button from "./Button";
 
 const Info = async () => {
   const session = await auth();
@@ -19,7 +21,9 @@ const Info = async () => {
         garantido seus estudos
       </p>
 
-      <PaymentButton>Assine Agora!</PaymentButton>
+      <Link href={"#price"}>
+        <Button className="bg-black text-white ">Escolha um plano</Button>
+      </Link>
       <p className="text-[#6B7280] text-[10px]">
         Comece sua assinatura agora mesmo. Cancele quando quiser.{" "}
       </p>

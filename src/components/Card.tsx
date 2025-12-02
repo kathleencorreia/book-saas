@@ -8,11 +8,11 @@ type Props = {
   title: string;
   value: string;
   items: string[];
-   priceId: string; 
+  priceId: string;
 };
 
-const Card =async ({ items, title, value, priceId }: Props) => {
-const session = await auth();
+const Card = async ({ items, title, value, priceId }: Props) => {
+  const session = await auth();
   const userEmail = session?.user?.email as string;
   const subscription = await fetchSubscriptionByEmail({ email: userEmail });
 
@@ -40,8 +40,9 @@ const session = await auth();
           </li>
         ))}
       </ul>
-      {!subscription && ( <PaymentButton priceId={priceId} >Assine Agora!</PaymentButton>) }
-     
+      {!subscription && (
+        <PaymentButton priceId={priceId}>Assine Agora!</PaymentButton>
+      )}
     </div>
   );
 };

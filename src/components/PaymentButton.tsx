@@ -10,7 +10,7 @@ import Button from "./Button";
 import { useState } from "react";
 import Modal from "./Modal";
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY!);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 type Props = {
   children: React.ReactNode;

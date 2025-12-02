@@ -18,7 +18,7 @@ const plans: Plan[] = [
       "Suporte por E-mail",
       "Upgrade a qualquer momento",
     ],
-    priceId: process.env.PRICE_BASIC,
+    priceId: process.env.NEXT_PUBLIC_PRICE_BASIC,
   },
   {
     title: "Premium",
@@ -29,7 +29,7 @@ const plans: Plan[] = [
       "Acesso ilimitado",
       "Cancele a qualquer momento",
     ],
-    priceId: process.env.PRICE_PREMIUM,
+    priceId: process.env.NEXT_PUBLIC_PRICE_PREMIUM,
   },
 ];
 

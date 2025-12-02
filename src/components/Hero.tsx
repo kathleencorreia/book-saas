@@ -2,6 +2,8 @@ import React from "react";
 import PaymentButton from "./PaymentButton";
 import { auth } from "../../auth";
 import fetchSubscriptionByEmail from "../../lib/stripe";
+import Button from "./Button";
+import Link from "next/link";
 
 const Hero = async () => {
   const session = await auth();
@@ -26,7 +28,7 @@ const Hero = async () => {
               className="w-full md:w-[279px] border border-[#ccc] py-2 px-2 rounded-md"
               placeholder="Coloque seu Email"
             />
-            <PaymentButton>Assine Agora!</PaymentButton>
+            <Link href={"#price"}  ><Button className="bg-black text-white ">Escolha um plano</Button></Link>
           </div>
           <p className="text-[#6B7280] text-[10px]">
             Comece sua assinatura agora mesmo. Cancele quando quiser.
