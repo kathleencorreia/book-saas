@@ -18,15 +18,21 @@ const Hero = async () => {
           receba um ebook novo de programação.
         </p>
       </div>
-      {!subscription && ( <>
-       <div className="mt-20 w-full flex flex-col md:flex-row items-center md:justify-center gap-2 md:gap-0">
-        <input type="text" className="w-full md:w-[279px] border border-[#ccc] py-2 px-2 rounded-md" placeholder="Coloque seu Email"/>
-        <PaymentButton >Assine Agora!</PaymentButton>
-      </div>
-      <p className="text-[#6B7280] text-[10px]">
-        Comece sua assinatura agora mesmo. Cancele quando quiser.
-      </p></> ) }
-     
+      {!subscription && (
+        <>
+          <div className="mt-20 w-full flex flex-col md:flex-row items-center md:justify-center gap-2 md:gap-0">
+            <input
+              type="text"
+              className="w-full md:w-[279px] border border-[#ccc] py-2 px-2 rounded-md"
+              placeholder="Coloque seu Email"
+            />
+            <PaymentButton>Assine Agora!</PaymentButton>
+          </div>
+          <p className="text-[#6B7280] text-[10px]">
+            Comece sua assinatura agora mesmo. Cancele quando quiser.
+          </p>
+        </>
+      )}
     </section>
   );
 };

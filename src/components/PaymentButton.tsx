@@ -10,13 +10,11 @@ import Button from "./Button";
 import { useState } from "react";
 import Modal from "./Modal";
 
-const stripePromise = loadStripe(
-  process.env.STRIPE_PUBLISHABLE_KEY!
-);
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY!);
 
 type Props = {
   children: React.ReactNode;
-  priceId: string;
+  priceId?: string;
 };
 
 export default function Checkout({ children, priceId }: Props) {
@@ -27,14 +25,13 @@ export default function Checkout({ children, priceId }: Props) {
         onClick={() => setOpenModal(true)}
         className="text-white w-full bg-black hover:bg-[#1f1f1f]"
       >
-        {" "}
-        Assine agora
+        {children}
       </Button>
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
         <EmbeddedCheckoutProvider
           stripe={stripePromise}
           options={{
-            fetchClientSecret: () => fetchClientSecret(priceId),
+            fetchClientSecret: () => fetchClientSecret(priceId ?? ""),
           }}
         >
           <EmbeddedCheckout />
