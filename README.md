@@ -91,11 +91,25 @@ npx auth secret
 
 - Criptografia de Senhas — bcrypt-ts
 
-Instalação:
+ Instalação:
 
 npm install bcrypt-ts
 
-Variáveis de Ambiente — Exemplo
+
+## Stripe — Pagamentos e Assinaturas
+
+O projeto utiliza a API do Stripe para gerenciamento de assinaturas usando o Embedded Checkout.
+
+Instalação do Stripe SDK
+
+Instale o pacote oficial do Stripe para Node.js:
+
+npm install stripe
+
+yarn add stripe
+
+
+# Variáveis de Ambiente — Exemplo
 
 Adicione no arquivo .env.local:
 
