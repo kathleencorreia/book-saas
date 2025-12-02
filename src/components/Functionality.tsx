@@ -3,7 +3,7 @@ import React from "react";
 
 const Functionality = () => {
   return (
-    <section id="functionality" className="px-8 md:px-24 scroll-mt-20">
+    <section id="functionality" className="px-8 md:px-24 scroll-mt-20 py-20">
       <h1 className="text-black font-bold text-4xl md:text-6xl text-center">Como funciona?</h1>
       <div className="flex flex-col md:flex-row justify-center gap-20 mt-12">
         <Image

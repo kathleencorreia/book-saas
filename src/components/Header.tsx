@@ -14,7 +14,7 @@ const Header = ({
 
   return (
     <header
-      className="w-full px-8 md:px-60 py-6 flex items-center 
+      className="w-full px-8 md:px-60 py-6 bg-[url('/Background.png')] flex items-center 
    justify-between "
     >
       <div>
@@ -66,7 +66,7 @@ const Header = ({
           </button>
 
           {open && (
-            <div className=" flex items-center w-full h-full bg-white flex-col gap-7 absolute top-[90px] left-0">
+            <div className=" flex items-center w-full h-full bg-white bg-[url('/Background.png')] flex-col gap-7 absolute top-[90px] left-0">
               <ul className="flex items-center flex-col gap-7">
                 <Link href={"#functionality"} onClick={() => setOpen(false)}>
                   <li>Funcionamento</li>

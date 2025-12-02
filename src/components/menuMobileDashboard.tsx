@@ -24,13 +24,13 @@ const MenuMobileDashboard = ({ userName }: { userName: string }) => {
       </button>
 
       {open && (
-        <div className="md:hidden w-full h-full top-[90px] bg-white absolute left-0 flex gap-4 flex-col items-center">
-          <ul className="flex items-center flex-col gap-4">
+        <div className="md:hidden w-full h-full top-[85px] bg-white absolute left-0 flex gap-4 flex-col items-center">
+          <ul className="flex items-center flex-col gap-4 mt-5">
             <Link href={"/dashboard/book"}>
-              <li className="hover:underline">Livro do mês</li>
+              <li className="hover:underline" onClick={()=>setOpen(false)}>Livro do mês</li>
             </Link>
             <Link href={"/dashboard/signature"}>
-              <li className="hover:underline">Assinatura</li>
+              <li className="hover:underline" onClick={()=>setOpen(false)}>Assinatura</li>
             </Link>
           </ul>
           <div className="flex flex-col items-start mt-5">
@@ -53,8 +53,6 @@ const MenuMobileDashboard = ({ userName }: { userName: string }) => {
                 Logout
               </button>
             </Form>
-            {/* {openUser && (
-            )} */}
           </div>
         </div>
       )}

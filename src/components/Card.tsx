@@ -1,16 +1,23 @@
 import Image from "next/image";
 import React from "react";
-import Button from "./Button";
+import PaymentButton from "./PaymentButton";
+import fetchSubscriptionByEmail from "../../lib/stripe";
+import { auth } from "../../auth";
 
 type Props = {
   title: string;
   value: string;
   items: string[];
+   priceId: string; 
 };
 
-const Card = ({ items, title, value }: Props) => {
+const Card =async ({ items, title, value, priceId }: Props) => {
+const session = await auth();
+  const userEmail = session?.user?.email as string;
+  const subscription = await fetchSubscriptionByEmail({ email: userEmail });
+
   return (
-    <div className="flex flex-col gap-4 border-[1px] border-[#e6e6e6] px-12 py-8 rounded-2xl">
+    <div className="flex flex-col gap-4 border border-[#e6e6e6] bg-white px-12 py-8 rounded-2xl">
       <h2 className="text-2xl font-semibold text-center">Plano {title}</h2>
       <p className="text-sm text-[#6b7280]">
         {" "}
@@ -33,7 +40,8 @@ const Card = ({ items, title, value }: Props) => {
           </li>
         ))}
       </ul>
-      <Button className="bg-black text-[#fff] hover:bg-[#1f1f1f]">Assine Agora</Button>
+      {!subscription && ( <PaymentButton priceId={priceId} >Assine Agora!</PaymentButton>) }
+     
     </div>
   );
 };
