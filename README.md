@@ -1,11 +1,11 @@
-## Projeto Next.js — Plataforma de Assinatura de E-books
-# Link do Deploy: https://book-saas-five.vercel.app/
+# Projeto Next.js — Plataforma de Assinatura de E-books
+## Link do Deploy: https://book-saas-five.vercel.app/
 
 Este projeto foi criado com Next.js utilizando o comando:
 
 npx create-next-app
 
-# Funcionalidades
+## Funcionalidades
 
 - Autenticação com NextAuth (Google OAuth)
 
@@ -19,9 +19,9 @@ npx create-next-app
 
 - Checkout integrado usando Stripe Embedded Checkout
 
-# Como começar
+## Como começar
 
-# Instalar dependências
+## Instalar dependências
  - npm install
  ou
 yarn
@@ -44,7 +44,7 @@ Acesse no navegador:
 
 http://localhost:3000
 
-# Requisitos
+## Requisitos
 - Versão do Node
 Use a versão 20.x do Node.js
 Verifique com:
@@ -91,21 +91,21 @@ Instale o pacote oficial do Stripe para Node.js:
 npm install stripe
 yarn add stripe
 
-# Variáveis de Ambiente — Exemplo
+## Variáveis de Ambiente — Exemplo
 
 Adicione no arquivo .env.local:
 
-# Conexão com o banco de dados PostgreSQL
+## Conexão com o banco de dados PostgreSQL
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DBNAME?schema=public"
 
-# NextAuth Secret (gerado com npx auth secret)
+## NextAuth Secret (gerado com npx auth secret)
 AUTH_SECRET="your_secret_key_here"
 
-# Credenciais Google OAuth
+## Credenciais Google OAuth
 AUTH_GOOGLE_ID="your_google_client_id_here"
 AUTH_GOOGLE_SECRET="your_google_client_secret_here"
 
-# Stripe
+## Stripe
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
 NEXT_PUBLIC_PRICE_BASIC=
